@@ -18,7 +18,7 @@
         <div class="border-t border-green-500 w-full max-w-lg my-2 hidden md:block"></div>
 
         <!-- Desktop Menu -->
-        <nav class="flex space-x-8 text-gray-700 font-bold" id="desktop-menu">
+        <nav class="hidden md:flex space-x-8 text-gray-700 font-bold" id="desktop-menu">
             <a href="#accueil" class="hover:text-green-400 py-2 transition-all duration-300">Accueil</a>
             <a href="#actions" class="hover:text-green-400 py-2 transition-all duration-300">Nos actions</a>
             <a href="#association" class="hover:text-green-400 py-2 transition-all duration-300">L’association</a>
@@ -26,6 +26,25 @@
             <a href="#agenda" class="hover:text-green-400 py-2 transition-all duration-300">Agenda</a>
             <a href="#documentation" class="hover:text-green-400 py-2 transition-all duration-300">Documentation</a>
         </nav>
+
+        <!-- Mobile Burger Menu -->
+        <div class="md:hidden w-full flex justify-end pr-4">
+            <button id="burger-menu" class="text-green-700 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden flex flex-col space-y-4 mt-4 text-center text-gray-700 font-bold">
+            <a href="#accueil" class="hover:text-green-400 py-2">Accueil</a>
+            <a href="#actions" class="hover:text-green-400 py-2">Nos actions</a>
+            <a href="#association" class="hover:text-green-400 py-2">L’association</a>
+            <a href="#equipe" class="hover:text-green-400 py-2">L’équipe</a>
+            <a href="#agenda" class="hover:text-green-400 py-2">Agenda</a>
+            <a href="#documentation" class="hover:text-green-400 py-2">Documentation</a>
+        </div>
     </div>
 </header>
 
@@ -57,12 +76,20 @@
     <h2 class="text-center text-4xl mt-24">Documentation</h2>
 </section>
 
-<!-- JavaScript for Active Menu Highlight and Scroll Handling -->
+<!-- JavaScript for Active Menu Highlight, Burger Menu, and Scroll Handling -->
 <script>
     const sections = document.querySelectorAll('section');
-    const menuLinks = document.querySelectorAll('#desktop-menu a');
+    const desktopMenuLinks = document.querySelectorAll('#desktop-menu a');
+    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
     const header = document.querySelector('header');
     const headerSpacer = document.getElementById('header-spacer');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const burgerMenu = document.getElementById('burger-menu');
+
+    // Toggle mobile menu
+    burgerMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
 
     // Dynamically adjust the spacer height based on the header's height
     function adjustSpacerHeight() {
@@ -75,7 +102,7 @@
     window.addEventListener('resize', adjustSpacerHeight);
 
     // Scroll to section on menu click
-    menuLinks.forEach(link => {
+    [...desktopMenuLinks, ...mobileMenuLinks].forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
@@ -86,17 +113,22 @@
                 top: targetSection.offsetTop - headerHeight, // Adjust scroll position based on header height
                 behavior: 'smooth'
             });
+
+            // Close mobile menu on click
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
         });
     });
 
     // Remove all active underline classes
     function removeActiveUnderline() {
-        menuLinks.forEach(link => {
+        desktopMenuLinks.forEach(link => {
             link.classList.remove('border-b-2', 'border-green-500');
         });
     }
 
-    // Add active underline to the correct menu item based on scroll position
+    // Add active underline to the correct menu item based on scroll position (desktop only)
     function setActiveMenu() {
         let currentSection = '';
 
@@ -107,8 +139,8 @@
             }
         });
 
-        // Update the active state
-        menuLinks.forEach(link => {
+        // Update the active state for desktop menu only
+        desktopMenuLinks.forEach(link => {
             if (link.getAttribute('href').substring(1) === currentSection) {
                 removeActiveUnderline();
                 link.classList.add('border-b-2', 'border-green-500');
