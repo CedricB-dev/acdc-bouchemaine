@@ -19,18 +19,18 @@
 
         <!-- Desktop Menu -->
         <nav class="flex space-x-8 text-gray-700 font-bold" id="desktop-menu">
-            <a href="#accueil" class="hover:text-green-500 py-2 transition-all duration-300">Accueil</a>
-            <a href="#actions" class="hover:text-green-500 py-2 transition-all duration-300">Nos actions</a>
-            <a href="#association" class="hover:text-green-500 py-2 transition-all duration-300">L’association</a>
-            <a href="#equipe" class="hover:text-green-500 py-2 transition-all duration-300">L’équipe</a>
-            <a href="#agenda" class="hover:text-green-500 py-2 transition-all duration-300">Agenda</a>
-            <a href="#documentation" class="hover:text-green-500 py-2 transition-all duration-300">Documentation</a>
+            <a href="#accueil" class="hover:text-green-400 py-2 transition-all duration-300">Accueil</a>
+            <a href="#actions" class="hover:text-green-400 py-2 transition-all duration-300">Nos actions</a>
+            <a href="#association" class="hover:text-green-400 py-2 transition-all duration-300">L’association</a>
+            <a href="#equipe" class="hover:text-green-400 py-2 transition-all duration-300">L’équipe</a>
+            <a href="#agenda" class="hover:text-green-400 py-2 transition-all duration-300">Agenda</a>
+            <a href="#documentation" class="hover:text-green-400 py-2 transition-all duration-300">Documentation</a>
         </nav>
     </div>
 </header>
 
 <!-- Spacer to account for the fixed header height -->
-<div class="h-40"></div>
+<div id="header-spacer" class="h-40"></div>
 
 <!-- Sections -->
 <section id="accueil" class="h-screen bg-green-50 pt-16">
@@ -61,7 +61,18 @@
 <script>
     const sections = document.querySelectorAll('section');
     const menuLinks = document.querySelectorAll('#desktop-menu a');
-    const headerHeight = document.querySelector('header').offsetHeight;
+    const header = document.querySelector('header');
+    const headerSpacer = document.getElementById('header-spacer');
+
+    // Dynamically adjust the spacer height based on the header's height
+    function adjustSpacerHeight() {
+        const headerHeight = header.offsetHeight;
+        headerSpacer.style.height = `${headerHeight}px`;
+    }
+
+    // Adjust spacer on load and on resize
+    adjustSpacerHeight();
+    window.addEventListener('resize', adjustSpacerHeight);
 
     // Scroll to section on menu click
     menuLinks.forEach(link => {
@@ -69,6 +80,8 @@
             event.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
+            const headerHeight = header.offsetHeight;
+
             window.scrollTo({
                 top: targetSection.offsetTop - headerHeight, // Adjust scroll position based on header height
                 behavior: 'smooth'
@@ -88,7 +101,7 @@
         let currentSection = '';
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerHeight - 10; // Offset for header height
+            const sectionTop = section.offsetTop - header.offsetHeight - 10; // Offset for header height
             if (window.pageYOffset >= sectionTop) {
                 currentSection = section.getAttribute('id');
             }
