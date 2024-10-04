@@ -108,9 +108,11 @@
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
             const headerHeight = header.offsetHeight;
+            const isMobile = window.innerWidth < 768;
+            const scrollOffset = isMobile ? headerHeight - 450 : headerHeight -100;
 
             window.scrollTo({
-                top: targetSection.offsetTop - headerHeight, // Adjust scroll position based on header height
+                top: targetSection.offsetTop - scrollOffset,
                 behavior: 'smooth'
             });
 
@@ -133,8 +135,8 @@
         let currentSection = '';
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - header.offsetHeight - 10; // Offset for header height
-            if (window.pageYOffset >= sectionTop) {
+            const sectionTop = section.offsetTop - header.offsetHeight - 500; // Offset for header height
+            if (window.scrollY >= sectionTop) {
                 currentSection = section.getAttribute('id');
             }
         });
