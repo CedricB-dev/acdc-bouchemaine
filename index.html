@@ -7,53 +7,58 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-green-50 text-gray-800">
-    <!-- Header -->
-    <header class="bg-green-700 p-6">
-        <div class="container mx-auto text-center">
-            <img src="ACDC_v4_3_version finale sélectionnée.jpg" alt="Logo de l'ACDC" class="w-24 mx-auto">
-            <h1 class="text-3xl font-bold text-white mt-4">Atelier Citoyen Durable & Coopératif</h1>
-            <p class="text-green-200">Bouchemaine</p>
-        </div>
-    </header>
 
-    <!-- Introduction -->
-    <section class="my-12 px-6">
-        <div class="container mx-auto text-center">
-            <h2 class="text-2xl font-semibold mb-4">Qui sommes-nous ?</h2>
-            <p class="text-lg">
-                Cette association a pour but de promouvoir et réaliser des actions en faveur de l’environnement, de la consommation responsable 
-                et de l’éco-citoyenneté à Bouchemaine et alentours. Elle vise à encourager le public à adopter des modes de vie durables, à consommer 
-                de manière responsable, et à protéger l’environnement.
+    <!-- Navbar -->
+    <nav class="bg-green-700 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="ACDC_v4_3_version finale sélectionnée.jpg" alt="Logo de l'ACDC" class="w-12">
+            <ul class="flex space-x-6 text-white">
+                <li><a href="#accueil" class="hover:text-green-300">Accueil</a></li>
+                <li><a href="#actions" class="hover:text-green-300">Nos actions</a></li>
+                <li><a href="#association" class="hover:text-green-300">L’association</a></li>
+                <li><a href="#equipe" class="hover:text-green-300">L’équipe</a></li>
+                <li><a href="#agenda" class="hover:text-green-300">Agenda</a></li>
+                <li><a href="#documentation" class="hover:text-green-300">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="py-12 bg-white text-center">
+        <div class="container mx-auto">
+            <img src="ACDC_v4_3_version finale sélectionnée.jpg" alt="Logo de l'ACDC" class="w-24 mx-auto mb-4">
+            <h1 class="text-3xl font-bold text-green-700">Atelier Citoyen Durable & Coopératif</h1>
+            <p class="mt-4 text-lg">
+                L’Atelier Citoyen Durable et Coopératif est une association créée en 2024 par un groupe de bouchemainois, 
+                soucieux de s’engager dans des actions pour la transition, l’environnement, l’éco-citoyenneté.
             </p>
+            <a href="#contact" class="mt-6 inline-block bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600">Rejoignez-nous</a>
         </div>
     </section>
 
-    <!-- Actions Cards -->
-    <section class="my-12 px-6">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Card 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <img src="image_placeholder.jpg" alt="Atelier" class="rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Ateliers</h3>
-                <p>Participez à nos ateliers pratiques pour protéger l'environnement.</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <img src="image_placeholder.jpg" alt="Conférences" class="rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Conférences</h3>
-                <p>Découvrez nos conférences pour mieux comprendre les enjeux environnementaux.</p>
-            </div>
-            <!-- Card 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <img src="image_placeholder.jpg" alt="Vente d’arbres" class="rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Vente d’arbres</h3>
-                <p>Soutenez nos initiatives en achetant des arbres pour votre jardin.</p>
-            </div>
-            <!-- Card 4 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <img src="image_placeholder.jpg" alt="Repair café" class="rounded-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Repair Café</h3>
-                <p>Apportez vos objets cassés et apprenez à les réparer avec nous.</p>
+    <!-- Section Nos actions -->
+    <section id="actions" class="py-12 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold text-center text-green-700 mb-8">Nos actions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Repair Café -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="repair_cafe_image.jpg" alt="Repair Café" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-green-700 mb-2">Repair Café</h3>
+                    <p>Apprendre à réparer plutôt que jeter, tel est l’objectif principal d’un repair café. Venez nous rejoindre chaque mois.</p>
+                </div>
+                <!-- Card 2: Piège à frelon asiatique -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="frelon_image.jpg" alt="Piège à frelon" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-green-700 mb-2">Piège à frelon asiatique</h3>
+                    <p>Les frelons asiatiques sont des prédateurs redoutables pour les abeilles. Venez fabriquer des pièges avec nous !</p>
+                </div>
+                <!-- Card 3: Plantations d’arbres fruitiers -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="plantation_image.jpg" alt="Plantations d'arbres" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-green-700 mb-2">Plantations d’arbres fruitiers</h3>
+                    <p>Participez à notre initiative de plantation d'arbres fruitiers locaux et bio. Rejoignez-nous pour planter des arbres !</p>
+                </div>
             </div>
         </div>
     </section>
@@ -65,5 +70,6 @@
             <p>Visitez notre site web : <a href="https://www.acdc-bouchemaine.fr" class="text-green-300">www.acdc-bouchemaine.fr</a></p>
         </div>
     </footer>
+
 </body>
 </html>
