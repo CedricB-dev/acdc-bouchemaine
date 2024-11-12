@@ -3,337 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACDC - Atelier Citoyen Durable & Coopératif</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Association ACDC - Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-white">
-
-<!-- Header Section (Fixed) -->
-<header class="bg-white py-4 fixed top-0 w-full z-50 shadow-md">
-    <div class="container mx-auto flex flex-col items-center">
+<body>
+<!-- Header -->
+<header class="bg-white text-gray-900">
+    <div class="container mx-auto py-4 px-6 text-center md:block hidden">
         <!-- Logo -->
-        <img src="images/ACDC_image.jpg" alt="Logo de l'ACDC" class="w-48 md:w-64 lg:w-72">
-
-        <!-- Divider Line (Hidden on mobile) -->
-        <div class="border-t border-green-500 w-full max-w-lg my-2 hidden md:block"></div>
-
-        <!-- Desktop Menu -->
-        <nav class="hidden md:flex space-x-8 text-gray-700 font-bold" id="desktop-menu">
-            <a href="#accueil" class="hover:text-green-400 py-2 transition-all duration-300">Accueil</a>
-            <a href="#actions" class="hover:text-green-400 py-2 transition-all duration-300">Nos actions</a>
-            <a href="#association" class="hover:text-green-400 py-2 transition-all duration-300">L’association</a>
-<!--            <a href="#equipe" class="hover:text-green-400 py-2 transition-all duration-300">L’équipe</a>-->
-            <a href="#agenda" class="hover:text-green-400 py-2 transition-all duration-300">Agenda</a>
-<!--            <a href="#documentation" class="hover:text-green-400 py-2 transition-all duration-300">Documentation</a>-->
+        <img src="images/ACDC_image.jpg" alt="Logo de l'association" class="mx-auto w-64">
+    </div>
+    <div class="border-t border-gray-300">
+        <!-- Navigation -->
+        <nav class="hidden md:flex justify-center space-x-8 py-4">
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">Accueil</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">Nos actions</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">L'association</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">L'équipe</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">Agenda</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">Documentation</a>
         </nav>
-
-        <!-- Mobile Burger Menu -->
-        <div class="md:hidden w-full flex justify-end pr-4">
-            <button id="burger-menu" class="text-green-700 focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden flex flex-col space-y-4 mt-4 text-center text-gray-700 font-bold">
-            <a href="#accueil" class="hover:text-green-400 py-2">Accueil</a>
-            <a href="#actions" class="hover:text-green-400 py-2">Nos actions</a>
-            <a href="#association" class="hover:text-green-400 py-2">L’association</a>
-<!--            <a href="#equipe" class="hover:text-green-400 py-2">L’équipe</a>-->
-            <a href="#agenda" class="hover:text-green-400 py-2">Agenda</a>
-<!--            <a href="#documentation" class="hover:text-green-400 py-2">Documentation</a>-->
-        </div>
     </div>
 </header>
 
-<!-- Spacer to account for the fixed header height -->
-<div id="header-spacer" class="h-40"></div>
+<!-- Mobile Header -->
+<div class="md:hidden bg-white text-gray-900 flex justify-between items-center py-4 px-6">
+    <!-- Logo -->
+    <img src="images/ACDC_image.jpg" alt="Logo de l'association" class="w-40">
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden bg-white text-gray-900 hidden">
+    <nav class="space-y-4 px-6 py-4">
+        <a href="#" class="block text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">Accueil</a>
+        <a href="#" class="block text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">Nos actions</a>
+        <a href="#" class="block text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">L'association</a>
+        <a href="#" class="block text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">L'équipe</a>
+        <a href="#" class="block text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">Agenda</a>
+        <a href="#" class="block text-sm font-semibold leading-6 text-gray-900 hover:text-green-700">Documentation</a>
+    </nav>
+</div>
+
 <!-- Section Accueil -->
-<section id="accueil" class="bg-white py-16">
-    <div class="container mx-auto px-4 text-center">
-        <!-- Titre principal -->
-        <h1 class="text-2xl md:text-4xl font-bold text-green-700 mb-6">
-            L'Atelier Citoyen Durable et Coopératif
-        </h1>
-        <!-- Texte descriptif -->
-        <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-            L'Atelier Citoyen Durable et Coopératif (ACDC) est une association née en 2024 à Bouchemaine, de l'initiative d'habitants passionnés par la protection de l'environnement et l'engagement citoyen. L'ACDC a pour vocation de promouvoir des actions concrètes pour une transition écologique et une consommation plus responsable, en s'appuyant sur des initiatives locales et la mobilisation collective.
-        </p>
-        <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-            Nos activités incluent des <strong>Repair Cafés</strong> pour donner une nouvelle vie aux objets du quotidien, des ateliers de <strong>jardinage écologique</strong> pour apprendre à cultiver dans le respect de la nature, ainsi que des événements comme des <strong>conférences</strong>, des <strong>rencontres</strong> autour du zéro déchet, et des <strong>échanges de savoirs</strong> pour sensibiliser et éduquer la communauté.
-        </p>
-        <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-8">
-            Chacune de vos idées est précieuse pour nous. Que vous souhaitiez participer à nos événements ou proposer de nouvelles initiatives, nous serons ravis de vous accueillir. Ensemble, nous pouvons créer un changement durable et renforcer les liens sociaux autour d'une cause commune : la préservation de notre planète.
-        </p>
-        <!-- Bouton de contact -->
-        <a href="mailto:contact@acdc-bouchemaine.fr" class="inline-block bg-green-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition-colors duration-300">
-            Rejoignez-nous
-        </a>
+<div class="bg-white">
+    <div aria-hidden="true" class="relative">
+        <img src="/images/1.jpg" alt="Image d'accueil" class="h-96 w-full object-cover object-center">
+        <div class="absolute inset-0 bg-gradient-to-t from-white"></div>
     </div>
-</section>
 
-
-<!-- Sections -->
-<!--<section id="accueil" class="h-screen bg-green-50 pt-16">-->
-<!--    <h2 class="text-center text-4xl mt-24">Accueil</h2>-->
-<!--</section>-->
-
-<!-- Section Actions -->
-<section id="actions" class="bg-gray-50 py-16">
-    <div class="container mx-auto px-4">
-        <h2 class="text-2xl md:text-4xl font-bold text-center text-green-700 mb-12">Nos Actions</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Card 1: Repair Café -->
-            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-                <img src="images/repair-cafe.jpeg" alt="Repair Café" class="w-full h-60 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-green-700 text-center mb-4">Repair Café</h3>
-                    <p class="text-gray-700">
-                        Apprendre à réparer plutôt que jeter, tel est l’objectif principal d’un repair café.
-                        Chaque mois, retrouvez l’équipe de bénévoles pour des sessions réparation : vélo, électroménager, bricolage.
-                        Vous avez des compétences et aimez bricoler ? Contactez-nous !
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 2: Opération pièges à frelon asiatique -->
-            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-                <img src="images/piege-frelon.jpg" alt="Opération pièges à frelon asiatique" class="w-full h-60 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-green-700 text-center mb-4">Opération pièges à frelon asiatique</h3>
-                    <p class="text-gray-700">
-                        Les frelons asiatiques sont des prédateurs redoutables, notamment pour les abeilles.
-                        Le piégeage au bon moment avec des équipements sélectifs permet de réduire les populations de frelons.
-                        L’atelier consiste à la réalisation de pièges à partir de récup et de grilles spéciales frelons.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 3: Plantations d’arbres fruitiers -->
-            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-                <img src="images/plantation-arbres.jpeg" alt="Plantations d’arbres fruitiers" class="w-full h-60 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-green-700 text-center mb-4">Plantations d’arbres fruitiers</h3>
-                    <p class="text-gray-700">
-                        Initiée en 2023, l’opération « plantons des arbres » a permis la plantation de 450 arbres fruitiers tels que pommiers, pêchers, pruniers et cerisiers.
-                        Un nouveau projet « plantons des arbres » et « troc de plants » est prévu en décembre 2024.
-                        Jardinier amateur ou confirmé, rejoignez le groupe « arbre » !
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 4: Échanges de savoir -->
-            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-                <img src="images/echanges-savoir.jpeg" alt="Échanges de savoir" class="w-full h-60 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-green-700 text-center mb-4">Échanges de savoir</h3>
-                    <p class="text-gray-700">
-                        Venez partager et transmettre vos connaissances : couture, recettes de cuisine, zéro déchet, jardinage, bricolage.
-                        Sous forme d’ateliers en petit groupe, venez échanger et partager avec d'autres personnes curieuses d'apprendre.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--<section id="actions" class="h-screen bg-gray-50 pt-16">-->
-<!--    <h2 class="text-center text-4xl mt-24">Nos Actions</h2>-->
-<!--</section>-->
-
-<!-- Section Association -->
-<section id="association" class="bg-white py-16">
-    <div class="container mx-auto px-4 text-center md:text-left">
-        <h2 class="text-2xl md:text-4xl font-bold text-green-700 mb-8 text-center">L’Association</h2>
-
-        <p class="text-gray-700 text-lg leading-relaxed mb-8">
-            L’Atelier Citoyen Durable et Coopératif « <strong>ACDC</strong> » est une association loi 1901 créée en 2024 à Bouchemaine.
-        </p>
-
-        <p class="text-gray-700 text-lg leading-relaxed mb-8">
-            <strong>Objet de l'association :</strong> Cette association a pour but de promouvoir et réaliser des actions en faveur de l’environnement, de la consommation responsable et de l’éco-citoyenneté à Bouchemaine et alentours. Elle vise à encourager le public à adopter des modes de vie durables, à consommer de manière responsable, et à protéger l’environnement. À travers des campagnes d’information, des ateliers pratiques, des évènements et des conférences, l'association a également pour objectif de rassembler les citoyens pour promouvoir le développement social et culturel, créer des liens sociaux solides au sein de la communauté locale, pour favoriser l'expression des besoins et l'initiative des habitants.
-        </p>
-
-        <p class="text-gray-700 text-lg leading-relaxed mb-8">
-            Enfin, l’association coopère avec toutes les organisations partageant les mêmes valeurs pour mener des actions conjointes, échanger sur des pratiques durables et se faire le relais des initiatives locales. L’association exerce toutes les activités et accomplit toutes les opérations tendant à réaliser cet objet, en France et à l’étranger.
-        </p>
-
-        <p class="text-gray-700 text-lg leading-relaxed mb-8">
-            <strong>À noter :</strong> Les membres fondateurs ont décidé d’administrer l’association ACDC en <u>INSTANCE COLLEGIALE</u>. Les décisions, le fonctionnement et la gestion de l’association sont partagés entre les membres de cette instance collégiale. C'est une nouvelle manière démocratique de faire fonctionner l’association : souple, dynamique et motivante.
-        </p>
-
-        <p class="text-gray-700 text-lg leading-relaxed mb-8">
-            L’adhésion à ACDC permet de soutenir les initiatives portées par l’association. Elle permet également de prendre part aux actions et événements proposés par les membres d’ACDC. Elle permet surtout de pouvoir s’investir dans des projets concrets avec d’autres bénévoles.
-        </p>
-
-        <p class="text-gray-700 text-lg leading-relaxed">
-            ACDC reçoit également les dons.
-        </p>
-    </div>
-</section>
-
-
-<!--<section id="association" class="h-screen bg-green-50 pt-16">-->
-<!--    <h2 class="text-center text-4xl mt-24">L'Association</h2>-->
-<!--</section>-->
-
-<!--<section id="equipe" class="h-screen bg-gray-50 pt-16">-->
-<!--    <h2 class="text-center text-4xl mt-24">L'Équipe</h2>-->
-<!--</section>-->
-
-<!-- Section Agenda -->
-<section id="agenda" class="bg-gray-50 py-16">
-    <div class="container mx-auto px-4">
-        <h2 class="text-2xl md:text-4xl font-bold text-center text-green-700 mb-12">Agenda</h2>
-
-        <!-- Carte pour le 5 octobre -->
-        <div class="flex flex-col w-full bg-white rounded-lg shadow-lg md:flex-row mb-8">
-            <div class="flex flex-row justify-around p-4 font-bold leading-none text-white uppercase bg-gray-500 rounded-t-lg md:flex-col md:items-center md:justify-center md:w-1/4 md:rounded-l-lg md:rounded-t-none">
-                <div class="md:text-6xl">5</div>
-                <div class="md:text-3xl">Octobre</div>
-                <div class="md:text-xl">10h & 15h</div>
-            </div>
-            <div class="p-6 font-normal text-gray-800 md:w-3/4">
-                <h3 class="mb-4 text-xl md:text-2xl font-bold leading-none tracking-tight text-green-700">Fabrication de pièges à frelon</h3>
-                <p class="leading-relaxed">
-                    Retrouvez-nous le 5 octobre pour un atelier dédié à la fabrication de pièges à frelon asiatique.
-                    Cet atelier aura lieu à Bouchemaine, et vous y apprendrez à réaliser des pièges efficaces tout en utilisant des matériaux de récupération.
-                    Rejoignez-nous pour contribuer à la lutte contre ce prédateur des abeilles.
-                </p>
-                <p class="leading-relaxed text-gray-700">
-                    Une participation minimale de 6 € est demandée, payable en espèces ou par chèques.
-                </p>
-                <p class="mt-4 text-gray-600">Lieu : Miel et Loire à Bouchemaine, portes ouvertes du producteur</p>
-            </div>
+    <div class="relative mx-auto -mt-12 max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center lg:max-w-4xl">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Atelier Citoyen Durable et Coopératif</h2>
+            <p class="mt-4 text-gray-500">
+                L’Atelier Citoyen Durable et Coopératif (ACDC) est une association créée en 2024 par un groupe de citoyens de Bouchemaine, passionnés par la transition écologique et la promotion de l’éco-citoyenneté. Notre mission est de réaliser des actions concrètes et inclusives pour améliorer notre environnement local, comme des Repair Cafés, des activités de jardinage écologique, des initiatives Zéro Déchet, ainsi que des conférences et échanges de savoirs.
+                <br><br>
+                Nous croyons que chaque idée et chaque envie peut contribuer à un avenir plus durable. Rejoignez-nous pour bâtir ensemble un futur respectueux de notre environnement et des générations futures.
+            </p>
         </div>
 
-        <!-- Carte pour le 6 octobre -->
-        <div class="flex flex-col w-full bg-white rounded-lg shadow-lg md:flex-row">
-            <div class="flex flex-row justify-around p-4 font-bold leading-none text-white uppercase bg-gray-500 rounded-t-lg md:flex-col md:items-center md:justify-center md:w-1/4 md:rounded-l-lg md:rounded-t-none">
-                <div class="md:text-6xl">6</div>
-                <div class="md:text-3xl">Octobre</div>
-                <div class="md:text-xl">10h & 15h</div>
+        <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:max-w-none lg:grid-cols-3 lg:gap-x-8">
+            <div class="border-t border-gray-200 pt-4">
+                <dt class="font-medium text-gray-900">Repair Café</dt>
+                <dd class="mt-2 text-sm text-gray-500">Ateliers collaboratifs pour réparer des objets du quotidien et réduire le gaspillage.</dd>
             </div>
-            <div class="p-6 font-normal text-gray-800 md:w-3/4">
-                <h3 class="mb-4 text-xl md:text-2xl font-bold leading-none tracking-tight text-green-700">Fabrication de pièges à frelon</h3>
-                <p class="leading-relaxed">
-                    Retrouvez-nous le 6 octobre pour un atelier dédié à la fabrication de pièges à frelon asiatique.
-                    Cet atelier aura lieu à Bouchemaine, et vous y apprendrez à réaliser des pièges efficaces tout en utilisant des matériaux de récupération.
-                    Rejoignez-nous pour contribuer à la lutte contre ce prédateur des abeilles.
-                </p>
-                <p class="leading-relaxed text-gray-700">
-                    Une participation minimale de 6 € est demandée, payable en espèces ou par chèques.
-                </p>
-                <p class="mt-4 text-gray-600">Lieu : Miel et Loire à Bouchemaine, portes ouvertes du producteur</p>
+            <div class="border-t border-gray-200 pt-4">
+                <dt class="font-medium text-gray-900">Jardinage Écologique</dt>
+                <dd class="mt-2 text-sm text-gray-500">Activités pour promouvoir des pratiques de jardinage respectueuses de l’environnement.</dd>
             </div>
+            <div class="border-t border-gray-200 pt-4">
+                <dt class="font-medium text-gray-900">Zéro Déchet</dt>
+                <dd class="mt-2 text-sm text-gray-500">Initiatives et ateliers pour apprendre à réduire nos déchets au quotidien.</dd>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <dt class="font-medium text-gray-900">Conférences</dt>
+                <dd class="mt-2 text-sm text-gray-500">Rencontres thématiques sur des sujets liés à la transition écologique et l'éco-citoyenneté.</dd>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <dt class="font-medium text-gray-900">Échanges de savoirs</dt>
+                <dd class="mt-2 text-sm text-gray-500">Moments de partage et d'apprentissage entre les membres de la communauté.</dd>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+                <dt class="font-medium text-gray-900">Participation citoyenne</dt>
+                <dd class="mt-2 text-sm text-gray-500">Impliquer les habitants dans la prise de décision pour des actions locales durables.</dd>
+            </div>
+        </dl>
+    </div>
+</div>
+<!-- Section Nos Actions -->
+
+<!-- Section Nos actions -->
+<div class="mx-auto flex w-full max-w-7xl items-start gap-x-8 px-4 py-10 sm:px-6 lg:px-8">
+    <!-- Main Area -->
+    <main class="flex-1">
+        <div class="bg-white p-6 shadow-md rounded-md">
+            <h3 class="text-2xl font-bold text-gray-900">Liste d'actions</h3>
+            <ul class="mt-4 space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card 1: Repair Café -->
+                    <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                        <img src="images/repair-cafe.jpeg" alt="Repair Café" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 text-center mb-4">Repair Café</h3>
+                            <p class="text-gray-700">
+                                Apprendre à réparer plutôt que jeter, tel est l’objectif principal d’un repair café.
+                                Chaque mois, retrouvez l’équipe de bénévoles pour des sessions réparation : vélo, électroménager, bricolage.
+                                Vous avez des compétences et aimez bricoler ? Contactez-nous !
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Opération pièges à frelon asiatique -->
+                    <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                        <img src="images/piege-frelon.jpg" alt="Opération pièges à frelon asiatique" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 text-center mb-4">Opération pièges à frelon asiatique</h3>
+                            <p class="text-gray-700">
+                                Les frelons asiatiques sont des prédateurs redoutables, notamment pour les abeilles.
+                                Le piégeage au bon moment avec des équipements sélectifs permet de réduire les populations de frelons.
+                                L’atelier consiste à la réalisation de pièges à partir de récup et de grilles spéciales frelons.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Plantations d’arbres fruitiers -->
+                    <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                        <img src="images/plantation-arbres.jpeg" alt="Plantations d’arbres fruitiers" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 text-center mb-4">Plantations d’arbres fruitiers</h3>
+                            <p class="text-gray-700">
+                                Initiée en 2023, l’opération « plantons des arbres » a permis la plantation de 450 arbres fruitiers tels que pommiers, pêchers, pruniers et cerisiers.
+                                Un nouveau projet « plantons des arbres » et « troc de plants » est prévu en décembre 2024.
+                                Jardinier amateur ou confirmé, rejoignez le groupe « arbre » !
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Échanges de savoir -->
+                    <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                        <img src="images/echanges-savoir.jpeg" alt="Échanges de savoir" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 text-center mb-4">Échanges de savoir</h3>
+                            <p class="text-gray-700">
+                                Venez partager et transmettre vos connaissances : couture, recettes de cuisine, zéro déchet, jardinage, bricolage.
+                                Sous forme d’ateliers en petit groupe, venez échanger et partager avec d'autres personnes curieuses d'apprendre.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </ul>
         </div>
-    </div>
-</section>
+    </main>
 
-<!--<section id="agenda" class="h-screen bg-green-50 pt-16">-->
-<!--    <h2 class="text-center text-4xl mt-24">Agenda</h2>-->
-<!--</section>-->
+    <!-- Right Column Area -->
+    <aside class="sticky top-8 hidden w-96 shrink-0 xl:block">
+        <div class="bg-white p-6 shadow-md rounded-md">
+            <h3 class="text-2xl font-bold text-gray-900">Événements à venir</h3>
+            <ul class="mt-4 space-y-4">
+                <!-- Carte pour le 5 octobre -->
+                <div class="flex flex-col w-full bg-white rounded-lg shadow-lg md:flex-row mb-8">
+                    <div class="flex flex-row justify-around p-4 font-bold leading-none text-white uppercase bg-gray-500 rounded-t-lg md:flex-col md:items-center md:justify-center md:w-1/4 md:rounded-l-lg md:rounded-t-none">
+                        <div class="md:text-6xl">5</div>
+                        <div class="md:text-3xl">Octobre</div>
+                        <div class="md:text-xl">10h & 15h</div>
+                    </div>
+                    <div class="p-6 font-normal text-gray-800 md:w-3/4">
+                        <h3 class="mb-4 text-xl md:text-2xl font-bold leading-none tracking-tight text-green-700">Fabrication de pièges à frelon</h3>
+                        <p class="leading-relaxed text-gray-700">
+                            Une participation minimale de 6 € est demandée, payable en espèces ou par chèques.
+                        </p>
+                        <p class="mt-4 text-gray-600">Lieu : Miel et Loire à Bouchemaine, portes ouvertes du producteur</p>
+                    </div>
+                </div>
 
-<!--<section id="documentation" class="h-screen bg-gray-50 pt-16">-->
-<!--    <h2 class="text-center text-4xl mt-24">Documentation</h2>-->
-<!--</section>-->
+                <!-- Carte pour le 6 octobre -->
+                <div class="flex flex-col w-full bg-white rounded-lg shadow-lg md:flex-row">
+                    <div class="flex flex-row justify-around p-4 font-bold leading-none text-white uppercase bg-gray-500 rounded-t-lg md:flex-col md:items-center md:justify-center md:w-1/4 md:rounded-l-lg md:rounded-t-none">
+                        <div class="md:text-6xl">6</div>
+                        <div class="md:text-3xl">Octobre</div>
+                        <div class="md:text-xl">10h & 15h</div>
+                    </div>
+                    <div class="p-6 font-normal text-gray-800 md:w-3/4">
+                        <h3 class="mb-4 text-xl md:text-2xl font-bold leading-none tracking-tight text-green-700">Fabrication de pièges à frelon</h3>
+                        <p class="leading-relaxed text-gray-700">
+                            Une participation minimale de 6 € est demandée, payable en espèces ou par chèques.
+                        </p>
+                        <p class="mt-4 text-gray-600">Lieu : Miel et Loire à Bouchemaine, portes ouvertes du producteur</p>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </aside>
+</div>
 
-<!-- Footer -->
-<div class="border-t border-green-500 w-full my-4"></div>
-<footer class="py-8">
-    <div class="container mx-auto px-4 text-center">
-        <p class="text-gray-600 text-sm mb-4">
-            &copy; 2024 Atelier Citoyen Durable et Coopératif (ACDC). Tous droits réservés.
-        </p>
-        <p class="text-gray-600 text-sm">
-            <a href="mailto:contact@acdc-bouchemaine.fr" class="text-green-700 hover:text-green-800">contact@acdc-bouchemaine.fr</a>
-        </p>
-    </div>
-</footer>
-
-
-
-<!-- JavaScript for Active Menu Highlight, Burger Menu, and Scroll Handling -->
 <script>
-    const sections = document.querySelectorAll('section');
-    const desktopMenuLinks = document.querySelectorAll('#desktop-menu a');
-    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
-    const header = document.querySelector('header');
-    const headerSpacer = document.getElementById('header-spacer');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    const burgerMenu = document.getElementById('burger-menu');
-
-    // Toggle mobile menu
-    burgerMenu.addEventListener('click', () => {
+    mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
-
-    // Dynamically adjust the spacer height based on the header's height
-    function adjustSpacerHeight() {
-        const headerHeight = header.offsetHeight;
-        headerSpacer.style.height = `${headerHeight}px`;
-    }
-
-    // Adjust spacer on load and on resize
-    adjustSpacerHeight();
-    window.addEventListener('resize', adjustSpacerHeight);
-
-    // Scroll to section on menu click
-    [...desktopMenuLinks, ...mobileMenuLinks].forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            const headerHeight = header.offsetHeight;
-            const isMobile = window.innerWidth < 768;
-            //const scrollOffset = isMobile ? headerHeight - 450 : headerHeight -100;
-            const scrollOffset = isMobile ? headerHeight - 20 : headerHeight + 100;
-
-            window.scrollTo({
-                top: targetSection.offsetTop - scrollOffset,
-                behavior: 'smooth'
-            });
-
-            // Close mobile menu on click
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-    });
-
-    // Remove all active underline classes
-    function removeActiveUnderline() {
-        desktopMenuLinks.forEach(link => {
-            link.classList.remove('border-b-2', 'border-green-500');
-        });
-    }
-
-    // Add active underline to the correct menu item based on scroll position (desktop only)
-    function setActiveMenu() {
-        let currentSection = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - header.offsetHeight - 500; // Offset for header height
-            if (window.scrollY >= sectionTop) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-
-        // Update the active state for desktop menu only
-        desktopMenuLinks.forEach(link => {
-            if (link.getAttribute('href').substring(1) === currentSection) {
-                removeActiveUnderline();
-                link.classList.add('border-b-2', 'border-green-500');
-            }
-        });
-    }
-
-    // Run setActiveMenu on scroll
-    window.addEventListener('scroll', setActiveMenu);
 </script>
-
 </body>
 </html>
